@@ -1,0 +1,14 @@
+pub fn is_armstrong_number(num: u32) -> bool {
+    let mut digits: Vec<u32> = vec![];
+    let mut temp = num;
+    let mut sum = 0u32;
+    while temp > 0 {
+        digits.push(temp % 10);
+        temp /= 10;
+    }
+    let l = digits.len() as u32;
+    for digit in digits.iter() {
+        sum += digit.pow(l);
+    }
+    sum == num
+}
